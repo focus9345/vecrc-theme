@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package vecrc
+ * @package VECRC
  */
 
 if ( ! function_exists( 'vecrc_setup' ) ) :

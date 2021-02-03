@@ -11,7 +11,7 @@ necessary to load fonts used from google font library
 ================================================== */
 WebFont.load({
     google: {
-      families: ['Raleway','Audiowide','EB+Garamond']
+      families: ['PT+Sans','PT+Sans+Narrow','Nerko+One']
     }
   });
 /* ===============================================
