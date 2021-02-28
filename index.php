@@ -5,10 +5,10 @@
 
 get_header();
 ?>
-
+<div class="page-top" role="presentation"></div>
 <main class="container">
-<div class="row">
-    <section class="col-md-6">
+<div class="row justify-content-md-center">
+    <section class="col-md-7">
     <?php
         if ( have_posts() ) :
             if ( is_home() && ! is_front_page() ) :
@@ -37,7 +37,7 @@ get_header();
         endif;
         ?>
     </section>
-    <section class="col-md-4">
+    <section class="col-md-3 offset-md-1">
         <?php get_sidebar(); ?>
     </section>
 </div>

@@ -83,8 +83,8 @@ if ( ! function_exists( 'vecrc_setup' ) ) :
 		 * @link https://codex.wordpress.org/Theme_Logo
 		 */
 		add_theme_support( 'custom-logo', array(
-			'height'      => 200,
-			'width'       => 200,
+			'height'      => 60,
+			'width'       => 300,
 			'flex-width'  => true,
 			'flex-height' => true,
 		) );
@@ -123,12 +123,84 @@ function vecrc_widgets_init() {
 		'after_title'   => '</h2>',
 	) );
 	register_sidebar( array(
-		'name'          => esc_html__( 'footer-widget', 'vecrc' ),
-		'id'            => 'footer-widget',
+		'name'          => esc_html__( 'meeting-min', 'vecrc' ),
+		'id'            => 'meeting-min',
+		'description'   => esc_html__( 'Only  Meeting Minuets!', 'vecrc' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'home-top', 'vecrc' ),
+		'id'            => 'home-top',
+		'description'   => esc_html__( 'Add content for home page top banner section.', 'vecrc' ),
+		'before_widget' => '<div id="%1$s" class="card-body %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2 class="card-title">',
+		'after_title'   => '</h2>',
+	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'callout-age0', 'vecrc' ),
+		'id'            => 'callout-age0',
+		'description'   => esc_html__( 'Home page callout for ages 0 to 2.', 'vecrc' ),
+		'before_widget' => '<div id="%1$s" class="card-body %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h4 class="card-title">',
+		'after_title'   => '</h4>',
+	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'callout-age3', 'vecrc' ),
+		'id'            => 'callout-age3',
+		'description'   => esc_html__( 'Home page callout for ages 3 to 4.', 'vecrc' ),
+		'before_widget' => '<div id="%1$s" class="card-body %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h4 class="card-title">',
+		'after_title'   => '</h4>',
+	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'callout-age5', 'vecrc' ),
+		'id'            => 'callout-age5',
+		'description'   => esc_html__( 'Home page callout for ages 5 and up.', 'vecrc' ),
+		'before_widget' => '<div id="%1$s" class="card-body %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h4 class="card-title">',
+		'after_title'   => '</h4>',
+	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'mission-hp', 'vecrc' ),
+		'id'            => 'mission-hp',
+		'description'   => esc_html__( 'Widget for the home page mission statement.', 'vecrc' ),
+		'before_widget' => '<div id="%1$s" class="card-body %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2 class="card-title">',
+		'after_title'   => '</h2>',
+	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'footer-widget-left', 'vecrc' ),
+		'id'            => 'footer-widget-left',
 		'description'   => esc_html__( 'Add widgets here.', 'vecrc' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<p class="widget-title">',
+		'before_title'  => '<p class="footer-title">',
+		'after_title'   => '</p>',
+	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'footer-widget-center', 'vecrc' ),
+		'id'            => 'footer-widget-center',
+		'description'   => esc_html__( 'Add widgets here.', 'vecrc' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<p class="footer-title">',
+		'after_title'   => '</p>',
+	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'footer-widget-right', 'vecrc' ),
+		'id'            => 'footer-widget-right',
+		'description'   => esc_html__( 'Add widgets here.', 'vecrc' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<p class="footer-title">',
 		'after_title'   => '</p>',
 	) );
 }
@@ -138,20 +210,39 @@ add_action( 'widgets_init', 'vecrc_widgets_init' );
  * Enqueue scripts and styles.
  */
 function vecrc_scripts() {
+
     // Style Sheets
-	
-	wp_enqueue_style( 'fontawesome-css', get_template_directory_uri() . '/assets/fontawesome/css/all.min.css', array(), '5.15.2', 'all');
-    wp_enqueue_style( 'bootstrap-css', get_template_directory_uri() . '/assets/bootstrap/css/bootstrap.min.css', array(), '5.0.0', 'all' );
+    wp_enqueue_style( 'fontAwesome-css', '//use.fontawesome.com/releases/v5.0.13/css/all.css' );
+    wp_enqueue_style( 'bootstrap-css', '//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' );
     // Local Style Sheet
 	wp_enqueue_style( 'style', get_stylesheet_uri() );
 
     // Javascript
     wp_enqueue_script( 'google-fonts', '//ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js', array(), '1.6.26', true );
-	wp_enqueue_script( 'fontawesome-js', get_template_directory_uri() . '/assets/fontawesome/js/all.min.js',  array(), '5.15.2', true );
-    wp_enqueue_script( 'popper', get_template_directory_uri() . '/assets/popper/popper.min.js', array('jquery'), '2.5.4', true );
-    wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/assets/bootstrap/js/bootstrap.min.js', array('popper'), '5.0.0', true );
+    wp_enqueue_script( 'font-awesome', '//use.fontawesome.com/releases/v5.0.9/js/all.js', array(), '5.0.9', true );
+    wp_enqueue_script( 'jquery', '//code.jquery.com/jquery-3.3.1.slim.min.js', array(), '3.3.1', true );
+    wp_enqueue_script( 'popper', '//cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js', array('jquery'), '1.14.0', true );
+    wp_enqueue_script( 'bootstrap-js', '//maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js', array('jquery','popper'), '4.1.0', true );
     // Local Javascripts
 	wp_enqueue_script( 'vecrc-js', get_template_directory_uri() . '/js/script.js', array('google-fonts','jquery'), '', true );
+
+
+//NEW MENU ISSUE
+
+    // Style Sheets
+	
+	//wp_enqueue_style( 'fontawesome-css', get_template_directory_uri() . '/assets/fontawesome/css/all.min.css', array(), '5.15.2', 'all');
+    //wp_enqueue_style( 'bootstrap-css', get_template_directory_uri() . '/assets/bootstrap/css/bootstrap.min.css', array(), '5.0.0', 'all' );
+    // Local Style Sheet
+	//wp_enqueue_style( 'style', get_stylesheet_uri() );
+
+    // Javascript
+    //wp_enqueue_script( 'google-fonts', '//ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js', array(), '1.6.26', true );
+	//wp_enqueue_script( 'fontawesome-js', get_template_directory_uri() . '/assets/fontawesome/js/all.min.js',  array(), '5.15.2', true );
+    //wp_enqueue_script( 'popper', get_template_directory_uri() . '/assets/popper/popper.min.js', array('jquery'), '2.5.4', true );
+    //wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/assets/bootstrap/js/bootstrap.min.js', array('popper'), '5.0.0', true );
+    // Local Javascripts
+	//wp_enqueue_script( 'vecrc-js', get_template_directory_uri() . '/js/script.js', array('google-fonts','jquery'), '', true );
 
     // Not sure yet what these do
 	wp_enqueue_script( 'vecrc-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
@@ -165,7 +256,7 @@ add_action( 'wp_enqueue_scripts', 'vecrc_scripts' );
 /**
  * Implement the Custom Header feature.
  */
-require get_template_directory() . '/inc/custom-header.php';
+//require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.
@@ -189,17 +280,6 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
-function wpb_widgets_init() {
-   register_sidebar( array(
-   'name' => 'Header Widget',
-   'id' => 'header-widget',
-   'before_widget' => '<div class="hw-widget">',
-   'after_widget' => '</div>',
-   'before_title' => '<h2 class="hw-title">',
-   'after_title' => '</h2>',
-   ) );
-}
-add_action( 'widgets_init', 'wpb_widgets_init' );
 
 /* Added to Customeze Read more *
 function new_excerpt_more( $more ) {
