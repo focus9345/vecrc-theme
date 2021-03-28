@@ -1,0 +1,167 @@
+/*!
+Theme Name: VECRC
+Theme URI: https://connorjoshua.com
+Author: Joshua Connor & Jacqueline Tapia
+Author URI: https://connorjoshua.com
+Description: Theme created for VECRC
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: VECRC
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This style sheet works by customizing bootstrap version 5
+https://getbootstrap.com/docs/5.0/getting-started/introduction/
+*/
+
+/*
+ * -----------------------------------------
+ * css variables are documented here
+ *
+ * -----------------------------------------
+ */
+ :root {
+     --blue: #1F47C7;
+     --red: #D3290A;
+     --green: #30A342;
+     --purple: #60368A;
+     --yellow: #CCC108;
+     --white: #FFFFFF;
+     --grey-lg: #E8E8E8;
+     --grey: #808080;
+     --grey-dr: #282828;
+     --black: #000000;
+     --body-font:'PT Sans', sans-serif;
+     --heading-font:'PT Sans Narrow', sans-serif;
+     --writting-font:'Nerko One', cursive;
+ }
+ /* var(--black) to use */
+
+
+/*
+ * -----------------------------------------
+ * General 
+ *
+ * -----------------------------------------
+ */
+ body {
+    color:#282828;
+    color:var(--grey-dr);
+    font-family: sans-serif;
+    font-family: var(--body-font);
+    font-weight: 400;
+    line-height: 1.15em;
+    font-size:16px;
+
+ }
+ h1, h2, h3, h4, h5, h6 {
+    color: var(--purple);
+    font-family: var(--heading-font);
+    font-weight: 400;
+    line-height: 1.25em;
+    text-align:left;
+ }
+ h1 {
+    margin: 0 0 1.5em;
+    color: var(--black);
+    font-family: var(--writting-font);
+    font-size:3.5em;
+    text-align:center;
+ }
+ h2 {
+    font-size:3em;
+    margin: 2em 0 1em;
+ }
+ h3 {
+    font-size:2.5em;
+    margin: 2em 0 1em;
+    font-weight: 700;
+ }
+ h4 {
+    font-size:2em;
+    margin: 2em 0 1em;
+ }
+ h5 {
+    font-size:1.5em;
+    margin: 1em 0;
+    font-weight: 700;
+    font-style:italic;
+ }
+ h6 {
+    font-size:1.25em;
+    margin: 1em 0;
+    font-style:italic;
+ }
+ p {
+    color:var(--grey-dr);
+    line-height: 1.35em;
+    margin:0 0 2em;
+ }
+ ul, ol {
+    color:var(--grey);
+    line-height:1.125em;
+    margin:0.5em 0;
+ }
+ ul > li, ol > li {
+     padding:0 0 0.5em;
+ }
+ a {
+     color: var(--blue);
+ }
+
+ /*
+ * -----------------------------------------
+ * HEADER & MENU
+ *
+ * -----------------------------------------
+ */
+ nav {
+    font-family: var(--heading-font);
+    font-size: 1.25rem;
+ }
+ .navbar-nav, .navbar-nav > li {
+    margin:0;
+    padding:0;
+ } 
+
+ /*
+ * -----------------------------------------
+ * FOOTER
+ *
+ * -----------------------------------------
+ */
+ .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--purple);
+    color: var(--grey-lg);
+    text-align: center;
+    padding:2rem 0;
+    text-align:left;
+  }
+
+/*
+ * -----------------------------------------
+ * FRONT PAGE
+ *
+ * -----------------------------------------
+ */
+.cover-img {
+    background-image:
+    linear-gradient(to bottom, rgba(250, 250, 250, 0) 0%, rgba(250, 250, 250, 0.05) 80%, rgba(255, 255, 255, 1.0) 100%),
+    url('img/home-header.jpg');
+    width: 100vw;
+    height: 450px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+}
+
+
+/*  Header Logo  */
+.header-logo {
+    width: 300px;
+    height: 60px;
+}
