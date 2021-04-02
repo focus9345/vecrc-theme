@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @package VECRC
  */
@@ -31,7 +32,7 @@ get_header();
     <section class="callouts">
     <div class="container">
         <div class="row">
-        <div class="col-md-4">
+        <div class="col-lg-4">
         <div class="card card-shadow bg-yellow age0-2">
             <div class="card-body">
             <?php
@@ -44,7 +45,7 @@ get_header();
             </div>
             </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-lg-4">
         <div class="card card-shadow bg-purple age3-4">
             <div class="card-body">
             <?php
@@ -57,7 +58,7 @@ get_header();
             </div>
             </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-lg-4">
         <div class="card card-shadow bg-green age5">
             <div class="card-body">
             <?php
@@ -77,7 +78,7 @@ get_header();
     <section class="mission">
     <div class="container">
         <div class="row">
-        <div class="col-lg-8 mission-view">
+        <div class="col-lg-6 mission-view">
             
             <?php
                 if ( is_active_sidebar( 'mission-hp' ) ) : ?>
