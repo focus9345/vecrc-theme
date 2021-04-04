@@ -1,10 +1,7 @@
 <?php
 /*
-Template Name: Default Page
-Template Post Type: post, pages
-*/
-/**
- * 
+ * Template Name: Default Page
+ * Template Post Type: post, pages
  * @package VECRC
  */
 

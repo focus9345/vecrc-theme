@@ -1,5 +1,6 @@
 <?php
 /**
+ * Template Name: Post Page with sidebar
  * @package VECRC
  */
 

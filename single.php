@@ -1,6 +1,7 @@
 <?php
 
 /**
+ * Template Name: Full Post
  * @package VECRC
  */
 

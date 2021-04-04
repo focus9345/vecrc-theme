@@ -91,7 +91,7 @@ h6 {
  font-style:italic;
 }
 p {
- line-height: 1.45em;
+ line-height: 1.55em;
  margin:0 0 2em;
 }
 ul, ol {
@@ -378,6 +378,40 @@ transition: all 0.6s ease;
  color: var(--grey-lg);
  padding:2rem 0;
  text-align:left;
+ line-height: 1.35em;
+}
+
+.footer a {
+   color: var( --yellow);
+   transition: all 0.5s ease;
+   border-radius: 3px;
+ }
+ .footer a:hover {
+ color: var(--white);
+ text-decoration: none;
+ text-shadow: 3px 3px #000000;
+ background: rgba(255, 255, 255, 0.05);
+ }
+ .footer a:active {
+ color: var(--grey-lg);
+ }
+ .footer .footer-title {
+    margin: 0 0 0.25em 0;
+    font-weight: 700;
+ }
+ .footer .footer-link {
+    list-style: none;
+    margin:0;
+    padding:0;
+
+ }
+ .footer .footer-link li {
+   margin:0;
+   padding:0;
+}
+.footer .footer-link li a{
+   display: block;
+   padding: .3em .5em;
 }
 
 /*
@@ -583,11 +617,42 @@ width: 100vw;
  background-size: cover;
  background-repeat: no-repeat;
 }
-.page main, .blog main{
+.page main, .blog main, .single main{
  margin-top: 5rem;
  margin-bottom:3rem;
 }
 
+
+/* Accordion Special Style for interior pages */
+/* see bootstrap v4 for setup instrtructions */
+#accordion .card-header{
+   background-color: rgba(224, 214, 41, 0.5);
+} 
+#accordion .card-header h3{
+   margin:0;
+   padding:0;
+   font-size: 1rem;
+} 
+#accordion .card-header h3 button{
+   display: block;
+   width:100%;
+   color: var(--black);
+   font-size: 2rem;
+   text-align: left;
+   border-radius: 2px;
+} 
+#accordion .card-header h3 button:hover{
+   text-shadow: 1px 1px rgba(224, 214, 41, 1);
+   text-decoration: none;
+} 
+#accordion .card-header h3 button:active{
+   text-shadow: 1px 1px rgba(224, 214, 41, 1);
+   text-decoration: none;
+} 
+#accordion .card-header h3 button:focus {
+   text-shadow: 1px 1px rgba(224, 214, 41, 1);
+   text-decoration: none;
+}
 /*
 * -----------------------------------------
 * BLOG ARTICLES
@@ -596,10 +661,13 @@ width: 100vw;
 */
 
 .blog .widget {
- background:rgba(48, 163, 66, 0.15);
+ background:none;
  padding: 1em 2em;
  margin-bottom:2.5em;
  border-radius: 8px;
+}
+.blog .footer .widget {
+   background-color: none;
 }
 
 .blog .widget .widget-title {
@@ -634,9 +702,59 @@ border-radius: 0.25em;
 margin: 0 0.2em;
 
 }
+/*
 .blog .tags-links {
 
 }
 .blog .cat-links {
 
+}*/
+
+/* Single Pages */
+.single article .entry-header h1 {
+   border-top: 1px solid var(--blue);
+   border-bottom: 1px solid var(--blue);
+   padding: 0.5em  0;
+   text-align: center;
+   margin:0 0 1em 0;
+   font-size: 2em;
+   line-height: 1.2em;
+   color: var(--blue);
+}
+.single article .entry-header .entry-meta {
+   font-size: .9em;
+   color: var(--grey);
+   font-style: italic;
+   margin-bottom:1.25em;
+}
+
+/*nav section */
+.single main nav h2  {
+   color: var(--green);
+   font-size:  1.25rem;
+   border-bottom: 1px dashed var(--green);
+   padding: 0.25em 0;
+   margin: 1.25em 0 .5em 0;
+}
+.single main nav .nav-links  { 
+   font-size: 1.125rem;
+}
+.single main nav .nav-links a{ 
+   font-size: 1.125rem;
+   display: block;
+}
+.single main nav .nav-links a:hover{ 
+   text-decoration: none;
+   text-shadow: 1px 1px var(--grey-lg);
+   color: var(--green);
+}
+.single main nav .nav-links a:active{ 
+   text-decoration: none;
+   text-shadow: 1px 1px var(--grey-lg);
+   color: var(--purple);
+}
+.single main nav .nav-links a:focus{ 
+   text-decoration: none;
+   text-shadow: 1px 1px var(--grey-lg);
+   color: var(--grey);
 }
